@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootshaus Neckarsulm – Speiseplan (Test)</title>
+
+<style>
+:root{
+  --bg:#f5f5f5;
+  --paper:#ffffff;
+  --text:#1e1e1e;
+  --muted:#666;
+  --accent:#1f4d2b; /* Bootshaus-grün */
+  --border:#ddd;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+header{
+  background:var(--paper);
+  border-bottom:2px solid var(--accent);
+  padding:16px;
+  text-align:center;
+}
+
+header h1{
+  margin:0;
+  font-size:1.6rem;
+}
+
+header p{
+  margin:4px 0 0;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+.notice{
+  background:#fff7d6;
+  border:1px solid #f0e0a0;
+  padding:10px 14px;
+  margin:16px;
+  font-size:0.9rem;
+}
+
+.section{
+  background:var(--paper);
+  margin:16px;
+  border:1px solid var(--border);
+}
+
+.section h2{
+  margin:0;
+  padding:10px 14px;
+  background:#f0f0f0;
+  border-bottom:1px solid var(--border);
+  font-size:1.2rem;
+}
+
+.item{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 14px;
+  border-bottom:1px solid var(--border);
+}
+
+.item:last-child{
+  border-bottom:none;
+}
+
+.name{
+  font-weight:bold;
+}
+
+.desc{
+  font-size:0.9rem;
+  color:var(--muted);
+  margin-top:3px;
+}
+
+.price{
+  white-space:nowrap;
+  font-weight:bold;
+}
+
+footer{
+  margin:24px 16px 40px;
+  font-size:0.85rem;
+  color:var(--muted);
+  text-align:center;
+}
+
+@media print{
+  body{background:#fff}
+  .notice{display:none}
+  header{border:none}
+  .section{margin:0 0 12px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Bootshaus Neckarsulm</h1>
+  <p>Speiseplan · Testversion</p>
+</header>
+
+<div class="notice">
+  ⚠️ <strong>Testseite</strong><br>
+  Diese Seite dient nur zum Testen (Handy, Tablet, PC).  
+  Inhalte & Preise entsprechen dem aktuellen Stand.
+</div>
+
+<div class="section">
+  <h2>Mittagstisch</h2>
+
+  <div class="item">
+    <div>
+      <div class="name">Schnitzel „Wiener Art“</div>
+      <div class="desc">mit Pommes oder Kartoffelsalat</div>
+    </div>
+    <div class="price">11,90 €</div>
+  </div>
+
+  <div class="item">
+    <div>
+      <div class="name">Zwiebelrostbraten</div>
+      <div class="desc">mit Spätzle und Bratensoße</div>
+    </div>
+    <div class="price">14,90 €</div>
+  </div>
+
+  <div class="item">
+    <div>
+      <div class="name">Penne Gemüse</div>
+      <div class="desc">in leichter Rahmsoße</div>
+    </div>
+    <div class="price">9,90 €</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Dauerkarte</h2>
+
+  <div class="item">
+    <div>
+      <div class="name">Wurstsalat</div>
+      <div class="desc">mit Brot</div>
+    </div>
+    <div class="price">9,50 €</div>
+  </div>
+
+  <div class="item">
+    <div>
+      <div class="name">Salat Bootshaus</div>
+      <div class="desc">bunter Salat mit Putenstreifen</div>
+    </div>
+    <div class="price">11,50 €</div>
+  </div>
+</div>
+
+<footer>
+  Alle Preise inkl. MwSt · Allergene auf Anfrage<br>
+  Testumgebung – NOIR.studio
+</footer>
+
+</body>
+</html>
