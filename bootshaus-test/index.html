@@ -3,106 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bootshaus Neckarsulm – Speiseplan (Test)</title>
+<title>Bootshaus Neckarsulm – Speisekarte</title>
 
 <style>
 :root{
-  --bg:#f5f5f5;
+  --bg:#f4f1ec;
   --paper:#ffffff;
-  --text:#1e1e1e;
-  --muted:#666;
-  --accent:#1f4d2b; /* Bootshaus-grün */
-  --border:#ddd;
+  --text:#1f1f1f;
+  --muted:#555;
+  --accent:#6b5a3a;
+  --border:#d6d1c4;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, "Times New Roman", serif;
   background:var(--bg);
   color:var(--text);
 }
 
 header{
   background:var(--paper);
-  border-bottom:2px solid var(--accent);
-  padding:16px;
+  padding:22px 16px;
   text-align:center;
+  border-bottom:3px solid var(--accent);
 }
 
 header h1{
   margin:0;
-  font-size:1.6rem;
+  font-size:2.1rem;
 }
 
 header p{
-  margin:4px 0 0;
+  margin:6px 0 0;
   color:var(--muted);
-  font-size:0.95rem;
 }
 
-.notice{
-  background:#fff7d6;
-  border:1px solid #f0e0a0;
-  padding:10px 14px;
-  margin:16px;
-  font-size:0.9rem;
+.container{
+  max-width:1000px;
+  margin:0 auto;
+  padding:24px 16px 50px;
+}
+
+.block{
+  background:var(--paper);
+  border:1px solid var(--border);
+  margin-bottom:28px;
+}
+
+.block h2{
+  margin:0;
+  padding:14px 18px;
+  background:#eee9dd;
+  border-bottom:1px solid var(--border);
+  font-size:1.5rem;
+}
+
+.block p{
+  padding:14px 18px;
+  margin:0;
+  font-size:1rem;
+}
+
+.button-row{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  padding:18px;
+}
+
+a.button{
+  display:inline-block;
+  padding:12px 18px;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:bold;
+  background:#fff;
+}
+
+a.button:hover{
+  background:var(--accent);
+  color:#fff;
 }
 
 .section{
   background:var(--paper);
-  margin:16px;
   border:1px solid var(--border);
+  margin-bottom:28px;
 }
 
-.section h2{
+.section h3{
   margin:0;
-  padding:10px 14px;
-  background:#f0f0f0;
+  padding:12px 18px;
+  background:#eee9dd;
   border-bottom:1px solid var(--border);
-  font-size:1.2rem;
+  font-size:1.4rem;
 }
 
 .item{
   display:flex;
   justify-content:space-between;
-  gap:12px;
-  padding:10px 14px;
+  gap:18px;
+  padding:12px 18px;
   border-bottom:1px solid var(--border);
 }
 
-.item:last-child{
-  border-bottom:none;
-}
+.item:last-child{border-bottom:none}
 
-.name{
-  font-weight:bold;
-}
-
-.desc{
-  font-size:0.9rem;
-  color:var(--muted);
-  margin-top:3px;
-}
-
-.price{
-  white-space:nowrap;
-  font-weight:bold;
-}
+.name{font-weight:bold}
+.desc{font-size:0.9rem;color:var(--muted);margin-top:3px}
+.price{white-space:nowrap;font-weight:bold}
 
 footer{
-  margin:24px 16px 40px;
+  text-align:center;
   font-size:0.85rem;
   color:var(--muted);
-  text-align:center;
+  margin-top:40px;
 }
 
 @media print{
   body{background:#fff}
-  .notice{display:none}
-  header{border:none}
-  .section{margin:0 0 12px}
+  a.button{display:none}
 }
 </style>
 </head>
@@ -111,67 +135,69 @@ footer{
 
 <header>
   <h1>Bootshaus Neckarsulm</h1>
-  <p>Speiseplan · Testversion</p>
+  <p>Bistro · Café · Musikpub</p>
 </header>
 
-<div class="notice">
-  ⚠️ <strong>Testseite</strong><br>
-  Diese Seite dient nur zum Testen (Handy, Tablet, PC).  
-  Inhalte & Preise entsprechen dem aktuellen Stand.
+<div class="container">
+
+  <!-- AKTUELLE WOCHE -->
+  <div class="block">
+    <h2>Aktuelle Wochenkarte</h2>
+    <p>Mittagstisch Dienstag – Donnerstag · 11:00 – 14:00 Uhr</p>
+    <div class="button-row">
+      <a class="button" href="wochenkarte.pdf" target="_blank">
+        Wochenkarte als PDF öffnen
+      </a>
+    </div>
+  </div>
+
+  <!-- GESAMTKARTE -->
+  <div class="block">
+    <h2>Speisekarte</h2>
+    <p>Warme Küche: 11:00 – 14:00 Uhr · 17:00 – 21:00 Uhr</p>
+  </div>
+
+  <!-- SUPPEN -->
+  <div class="section">
+    <h3>Suppen</h3>
+    <div class="item"><div class="name">Maultaschensuppe</div><div class="price">4,80 €</div></div>
+    <div class="item"><div class="name">Currycremesuppe mit Garnele</div><div class="price">5,50 €</div></div>
+    <div class="item"><div class="name">Karotten-Ingwer-Kartoffelsuppe</div><div class="price">4,80 €</div></div>
+  </div>
+
+  <!-- SALATE -->
+  <div class="section">
+    <h3>Salate</h3>
+    <div class="item"><div><div class="name">Fitnesssalat mit Pute</div></div><div class="price">12,00 €</div></div>
+    <div class="item"><div><div class="name">Salat mit frittierten Maultaschen</div></div><div class="price">10,20 €</div></div>
+    <div class="item"><div><div class="name">Salat Italia</div><div class="desc">Thunfisch, Ei, Zwiebeln</div></div><div class="price">9,50 €</div></div>
+  </div>
+
+  <!-- SCHNITZEL & KLASSIKER -->
+  <div class="section">
+    <h3>Klassiker</h3>
+    <div class="item"><div class="name">Rostbraten mit Beilage & Salat</div><div class="price">21,00 €</div></div>
+    <div class="item"><div class="name">Cordon Bleu mit Beilage & Salat</div><div class="price">15,00 €</div></div>
+    <div class="item"><div class="name">Rahmschnitzel mit Beilage & Salat</div><div class="price">13,00 €</div></div>
+    <div class="item"><div class="name">Paniertes Schnitzel mit Beilage & Salat</div><div class="price">12,50 €</div></div>
+  </div>
+
+  <!-- FESTE -->
+  <div class="block">
+    <h2>Feiern & Festlichkeiten</h2>
+    <p>Menüs für Gruppen, Familienfeiern und Veranstaltungen.</p>
+    <div class="button-row">
+      <a class="button" href="festlichkeiten.pdf" target="_blank">
+        Festmenüs als PDF öffnen
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    Alle Preise inkl. MwSt · Speisen auch zum Abholen<br>
+    Telefonische Bestellungen bitte bis 11:30 Uhr
+  </footer>
+
 </div>
-
-<div class="section">
-  <h2>Mittagstisch</h2>
-
-  <div class="item">
-    <div>
-      <div class="name">Schnitzel „Wiener Art“</div>
-      <div class="desc">mit Pommes oder Kartoffelsalat</div>
-    </div>
-    <div class="price">11,90 €</div>
-  </div>
-
-  <div class="item">
-    <div>
-      <div class="name">Zwiebelrostbraten</div>
-      <div class="desc">mit Spätzle und Bratensoße</div>
-    </div>
-    <div class="price">14,90 €</div>
-  </div>
-
-  <div class="item">
-    <div>
-      <div class="name">Penne Gemüse</div>
-      <div class="desc">in leichter Rahmsoße</div>
-    </div>
-    <div class="price">9,90 €</div>
-  </div>
-</div>
-
-<div class="section">
-  <h2>Dauerkarte</h2>
-
-  <div class="item">
-    <div>
-      <div class="name">Wurstsalat</div>
-      <div class="desc">mit Brot</div>
-    </div>
-    <div class="price">9,50 €</div>
-  </div>
-
-  <div class="item">
-    <div>
-      <div class="name">Salat Bootshaus</div>
-      <div class="desc">bunter Salat mit Putenstreifen</div>
-    </div>
-    <div class="price">11,50 €</div>
-  </div>
-</div>
-
-<footer>
-  Alle Preise inkl. MwSt · Allergene auf Anfrage<br>
-  Testumgebung – NOIR.studio
-</footer>
-
 </body>
 </html>
