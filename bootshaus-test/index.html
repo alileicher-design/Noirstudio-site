@@ -5,219 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bootshaus Neckarsulm – Digitaler Speiseplan</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-<style>
-/* --- STYLES BEGINN --- */
-
-:root{
-  --color-primary-dark: #1f3f5a;     /* Tiefes Marineblau/Dunkel (Header, Titel) */
-  --color-accent-water: #4a759e;     /* Mittleres Blau (Akzent für Info) */
-  --color-sand: #c7b69a;             /* Sandfarben/Beige (Akzent für Linien/Hervorhebung) */
-  --color-light: #ffffff;            /* Hintergrund Weiß */
-  --color-bg-subtle: #f7f7f7;        /* Dezenter Hintergrund für Blöcke */
-  --color-text: #333333;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-body{
-  margin:0;
-  font-family: 'Roboto', Arial, sans-serif;
-  background-color: var(--color-bg-subtle);
-  color: var(--color-text);
-  line-height: 1.6;
-}
-
-/* HERO SECTION (Seeblick) */
-.hero-image{
-    /* Platzhalter für das gewünschte Bootshaus-Bild */
-    background-image: url('https://via.placeholder.com/1200x400/87CEFA/FFFFFF?text=Bootshaus+Neckarsulm+mit+Seeblick');
-    background-size: cover;
-    background-position: center;
-    height: 350px;
-    position: relative;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* HEADER */
-header{
-  background-color: var(--color-light);
-  padding: 20px 16px;
-  text-align: center;
-  border-bottom: 5px solid var(--color-sand);
-}
-
-.header-content{
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-header h1{
-  font-family: 'Playfair Display', serif;
-  margin: 0 0 5px;
-  font-size: 2.5rem;
-  color: var(--color-primary-dark);
-}
-
-.subtitle{
-  margin: 0 0 10px;
-  font-size: 1.1rem;
-  font-weight: 300;
-  color: var(--color-text);
-}
-
-.info-block{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    font-size: 0.95rem;
-    color: var(--color-accent-water);
-    margin-top: 10px;
-}
-.info-block strong{
-    color: var(--color-primary-dark);
-    font-weight: 500;
-}
-
-/* CONTAINER */
-.container{
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 30px 16px 50px;
-}
-
-/* MENU SECTIONS */
-.menu-section{
-  background-color: var(--color-light);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-bottom: 35px;
-  padding: 25px 0;
-}
-
-.section-title{
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-primary-dark);
-  padding: 0 25px 15px;
-  border-bottom: 2px solid var(--color-sand);
-  margin: 0 0 15px;
-}
-
-.menu-info{
-  padding: 0 25px 15px;
-  color: var(--color-text);
-  font-size: 1rem;
-  margin: 0;
-}
-.menu-info strong {
-    color: var(--color-accent-water); /* Wochenkarte Datum fett in Akzentfarbe */
-    font-weight: 700;
-}
-
-/* MENU ITEMS (FÜR KLASSIKER) */
-.menu-item{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 12px 25px;
-  border-bottom: 1px dashed var(--color-bg-subtle);
-  font-size: 0.95rem;
-}
-
-.menu-item:last-child{
-  border-bottom: none;
-}
-
-.item-name{
-  font-weight: 500;
-  color: var(--color-text);
-}
-
-.item-price{
-  white-space: nowrap;
-  font-weight: 700;
-  color: var(--color-accent-water);
-  padding-left: 15px;
-}
-
-/* TABELLE FÜR WOCHENKARTE */
-.weekly-table-container {
-    padding: 0 25px;
-}
-
-.weekly-table-container table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    font-size: 0.95rem;
-}
-
-.weekly-table-container thead th {
-    background-color: var(--color-sand);
-    color: var(--color-primary-dark);
-    padding: 10px 10px;
-    text-align: left;
-    font-weight: 700;
-}
-
-.weekly-table-container tbody td {
-    padding: 12px 10px;
-    border-bottom: 1px solid var(--color-bg-subtle);
-    vertical-align: top;
-}
-.weekly-table-container tbody tr:hover {
-    background-color: rgba(74, 117, 158, 0.05); /* Leichter Hover-Effekt */
-}
-
-.day-col {
-    width: 25%;
-    font-weight: 500;
-}
-.menu-col {
-    width: 37.5%;
-}
-
-.closed-day {
-    color: #cc0000; /* Rot für geschlossen */
-    font-weight: 700;
-}
-
-.small-info {
-    font-size: 0.85rem;
-    padding: 15px 0 0;
-    color: var(--color-primary-dark);
-    font-style: italic;
-    text-align: center;
-}
-
-/* FOOTER */
-.footer-block{
-  text-align: center;
-  padding: 20px;
-  color: var(--color-text);
-  font-size: 0.9rem;
-}
-
-@media (max-width: 768px) {
-    .info-block {
-        flex-direction: column;
-        gap: 5px;
-    }
-    .hero-image {
-        height: 200px;
-    }
-    .weekly-table-container table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-}
-/* --- STYLES ENDE --- */
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -239,7 +27,7 @@ header h1{
 <div class="container">
 
   <section id="weekly-menu-container" class="menu-section dynamic-menu">
-    <h2>Aktuelle Wochenkarte wird geladen...</h2>
+    <h2>Aktueller Speiseplan wird geladen...</h2>
   </section>
 
   <section class="menu-section">
@@ -275,18 +63,16 @@ async function loadWeeklyMenu() {
     const container = document.getElementById('weekly-menu-container');
     
     try {
-        // Läd die wochenkarte.json Datei
         const response = await fetch('wochenkarte.json');
         if (!response.ok) {
-            // Zeigt Fehler an, wenn die Datei nicht gefunden wird
             throw new Error(`HTTP-Fehler: ${response.status}`);
         }
         const data = await response.json();
         
-        // 4. und 5. Erstellung des HTMLs mit korrekter Formatierung und Logik
+        // Erstellung der HTML-Struktur der Tabelle
         let html = `
             <h2 class="section-title">${data.title}</h2>
-            <p class="menu-info">Mittagstisch Dienstag – Donnerstag · 11:00 – 14:00 Uhr | Gültig vom: <strong>${data.date_info}</strong></p>
+            <p class="menu-info">Gültig vom: <strong>${data.date_info}</strong></p>
             <div class="weekly-table-container">
             <table>
                 <thead>
@@ -308,6 +94,11 @@ async function loadWeeklyMenu() {
                 menu1_content = '<span class="closed-day">Mittags geschlossen</span>';
                 menu2_content = '<span class="closed-day">Geschlossen</span>';
             }
+            // Spezielle Logik für den Dienstag (aus dem PDF)
+            if (dayMenu.day === 'Dienstag') {
+                menu1_content = 'Mittags'; 
+            }
+
 
             html += `
                 <tr>
