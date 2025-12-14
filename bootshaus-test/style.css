@@ -1,0 +1,165 @@
+:root{
+  --color-dark: #1e1e1e;       /* Dunkle Textfarbe */
+  --color-light: #ffffff;      /* Hintergrundfarbe (Papier) */
+  --color-primary: #3d5a80;    /* Tiefes Blau (Akzent 1, maritim) */
+  --color-secondary: #e0fbfc;  /* Helles Mint (Leichter Akzent) */
+  --color-accent: #9d8c6b;     /* Warmes Sand/Beige (Akzent 2) */
+  --color-muted: #6a6a6a;      /* Gedämpfte Textfarbe */
+  --color-border: #f0f0f0;     /* Helle Trennlinie */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+
+/* HEADER */
+header{
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding: 40px 16px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-content{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header h1{
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.subtitle{
+  margin: 5px 0 15px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.zeiten-info{
+  background-color: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* CONTAINER */
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px 50px;
+}
+
+/* MENU SECTIONS */
+.menu-section{
+  background-color: var(--color-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 35px;
+  padding: 25px 0;
+}
+
+.section-title{
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  padding: 0 25px 15px;
+  border-bottom: 2px solid var(--color-accent);
+  margin: 0 0 15px;
+}
+
+.menu-info{
+  padding: 0 25px 15px;
+  color: var(--color-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+/* MENU ITEMS */
+.menu-category h3{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  padding: 15px 25px 5px;
+  margin: 0;
+}
+
+.menu-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px 25px;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.menu-item:last-child{
+  border-bottom: none;
+}
+
+.item-name{
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-dark);
+}
+
+.item-desc{
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-top: 3px;
+}
+
+.item-price{
+  white-space: nowrap;
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  padding-left: 15px; /* Abstand zum Text */
+}
+
+/* SPECIAL FOR WEEKLY MENU */
+.weekly-special{
+    /* Hervorhebung für das Wochengericht */
+    background-color: var(--color-secondary); 
+}
+
+/* FOOTER */
+.footer-block{
+  text-align: center;
+  padding: 20px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.small-text{
+    font-size: 0.8rem;
+    margin-top: -10px;
+}
+
+/* MOBILE OPTIMIERUNG (optional, da Flexbox/Grid meist gut skaliert) */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .menu-item {
+    padding: 10px 15px;
+  }
+  .item-price {
+    font-size: 1rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
