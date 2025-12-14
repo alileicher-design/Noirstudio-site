@@ -1,1 +1,298 @@
 
+:root{
+  --color-dark: #222222;        /* Dunkler Hintergrund/Text */
+  --color-light: #ffffff;       /* Papier Weiß */
+  --color-gold: #b39b6e;        /* Exklusiver Gold/Bronze Akzent */
+  --color-shadow: rgba(0, 0, 0, 0.15);
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Lora', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: #f5f5f5;
+  color: var(--color-dark);
+}
+
+/* --- LAYOUT STRUKTUR --- */
+.main-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--color-light);
+    box-shadow: 0 0 20px var(--color-shadow);
+}
+
+.content-area {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.menu-main {
+    flex-grow: 1;
+    flex-basis: 70%;
+}
+
+.menu-sidebar {
+    flex-basis: 30%;
+    padding-top: 20px;
+}
+
+/* --- HEADER & HERO --- */
+.hero-premium {
+    background-image: url('https://via.placeholder.com/1400x450/404040/b39b6e?text=PREMIUM+BOOTSHAUS+SEESZENE');
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 50px;
+    box-shadow: inset 0 -50px 50px rgba(0, 0, 0, 0.5);
+}
+
+.hero-premium h1 {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    letter-spacing: 5px;
+    margin: 0;
+    text-shadow: 2px 2px 4px var(--color-dark);
+}
+
+.hero-premium p {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin: 5px 0 0;
+}
+
+.top-info-bar {
+    background: var(--color-dark);
+    color: var(--color-light);
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* --- INHALTSBLÖCKE --- */
+.premium-block {
+    padding: 30px;
+    margin-bottom: 40px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--color-dark);
+    border-bottom: 2px solid var(--color-gold);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.sub-info, .loading-text, .error-text {
+    font-style: italic;
+    color: #666;
+}
+
+/* --- INTERAKTIVE ELEMENTE --- */
+.interactive-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.accent-button, .secondary-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.accent-button {
+    background: var(--color-gold);
+    color: var(--color-dark);
+}
+.accent-button:hover {
+    background: #a18a67;
+}
+.secondary-button {
+    background: #f0f0f0;
+    color: var(--color-dark);
+    border: 1px solid #ccc;
+}
+.secondary-button:hover {
+    background: #e0e0e0;
+}
+
+/* --- WOCHENKARTE (GRID) --- */
+.premium-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+.day-block {
+    background: var(--color-bg-subtle);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+.day-block h4 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--color-gold);
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+.day-block .menu-option {
+    margin-top: 15px;
+    position: relative;
+    padding-top: 25px; /* Platz für den Preis-Tag */
+}
+.day-block .price-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--color-gold);
+    color: var(--color-dark);
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 2px;
+}
+.day-block.closed {
+    background: #fafafa;
+    opacity: 0.8;
+}
+.day-block .closed-day {
+    color: #cc0000;
+    font-weight: 700;
+}
+
+/* --- KLASSIKER (BILDER) --- */
+.menu-item-premium {
+    display: flex;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+.item-photo {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+.item-details-premium {
+    flex-grow: 1;
+}
+.item-name-premium {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+.item-price-premium {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    white-space: nowrap;
+}
+.item-allergens {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 5px;
+}
+.full-width {
+    margin-left: 170px; /* Aligns non-image item details */
+}
+
+/* --- SIDEBAR --- */
+.sidebar-block {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--color-gold);
+}
+.sidebar-block h3 {
+    color: var(--color-gold);
+    font-family: var(--font-serif);
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+.map-placeholder {
+    width: 100%;
+    height: 200px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    margin-bottom: 10px;
+}
+.map-link {
+    display: block;
+    text-align: center;
+}
+
+/* --- FOOTER --- */
+.premium-footer {
+    background: var(--color-dark);
+    color: #cccccc;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+    .content-area {
+        flex-direction: column;
+    }
+    .menu-main, .menu-sidebar {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    .premium-menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-premium h1 {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 600px) {
+    .top-info-bar {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .premium-menu-grid {
+        grid-template-columns: 1fr;
+    }
+    .menu-item-premium {
+        flex-wrap: wrap;
+    }
+    .item-photo {
+        width: 100%;
+        height: 150px;
+    }
+    .full-width {
+        margin-left: 0;
+    }
+}
