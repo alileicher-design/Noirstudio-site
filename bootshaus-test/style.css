@@ -1,11 +1,10 @@
 :root{
-  --color-dark: #1e1e1e;       /* Dunkle Textfarbe */
-  --color-light: #ffffff;      /* Hintergrundfarbe (Papier) */
-  --color-primary: #3d5a80;    /* Tiefes Blau (Akzent 1, maritim) */
-  --color-secondary: #e0fbfc;  /* Helles Mint (Leichter Akzent) */
-  --color-accent: #9d8c6b;     /* Warmes Sand/Beige (Akzent 2) */
-  --color-muted: #6a6a6a;      /* Gedämpfte Textfarbe */
-  --color-border: #f0f0f0;     /* Helle Trennlinie */
+  --color-primary-dark: #1f3f5a;     /* Tiefes Marineblau/Dunkel (Header, Titel) */
+  --color-accent-water: #4a759e;     /* Mittleres Blau (Akzent für Info) */
+  --color-sand: #c7b69a;             /* Sandfarben/Beige (Akzent für Linien/Hervorhebung) */
+  --color-light: #ffffff;            /* Hintergrund Weiß */
+  --color-bg-subtle: #f7f7f7;        /* Dezenter Hintergrund für Blöcke */
+  --color-text: #333333;
 }
 
 *, *::before, *::after {
@@ -14,19 +13,29 @@
 
 body{
   margin:0;
-  font-family: 'Inter', Arial, sans-serif;
-  background-color: var(--color-secondary);
-  color: var(--color-dark);
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text);
   line-height: 1.6;
+}
+
+/* HERO SECTION (Seeblick) */
+.hero-image{
+    /* Platzhalter für das gewünschte Bootshaus-Bild */
+    background-image: url('https://via.placeholder.com/1200x350/87CEFA/FFFFFF?text=Bootshaus+Neckarsulm+mit+Seeblick');
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* HEADER */
 header{
-  background-color: var(--color-primary);
-  color: var(--color-light);
-  padding: 40px 16px;
+  background-color: var(--color-light);
+  padding: 20px 16px;
   text-align: center;
-  margin-bottom: 20px;
+  border-bottom: 5px solid var(--color-sand);
 }
 
 .header-content{
@@ -35,74 +44,77 @@ header{
 }
 
 header h1{
-  margin: 0;
-  font-size: 2.8rem;
-  font-weight: 700;
-  letter-spacing: -1px;
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 5px;
+  font-size: 2.5rem;
+  color: var(--color-primary-dark);
 }
 
 .subtitle{
-  margin: 5px 0 15px;
-  font-size: 1.2rem;
-  font-weight: 400;
-  opacity: 0.9;
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--color-text);
 }
 
-.zeiten-info{
-  background-color: rgba(255, 255, 255, 0.1);
-  display: inline-block;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
+.info-block{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 0.95rem;
+    color: var(--color-accent-water);
+    margin-top: 10px;
+}
+.info-block strong{
+    color: var(--color-primary-dark);
+    font-weight: 500;
 }
 
 /* CONTAINER */
 .container{
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 16px 50px;
+  padding: 30px 16px 50px;
 }
 
 /* MENU SECTIONS */
 .menu-section{
   background-color: var(--color-light);
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin-bottom: 35px;
   padding: 25px 0;
 }
 
 .section-title{
-  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
   padding: 0 25px 15px;
-  border-bottom: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-sand);
   margin: 0 0 15px;
 }
 
 .menu-info{
   padding: 0 25px 15px;
-  color: var(--color-muted);
-  font-style: italic;
+  color: var(--color-text);
+  font-size: 1rem;
   margin: 0;
 }
-
-/* MENU ITEMS */
-.menu-category h3{
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--color-dark);
-  padding: 15px 25px 5px;
-  margin: 0;
+.menu-info strong {
+    color: var(--color-accent-water); 
+    font-weight: 700;
 }
 
+/* MENU ITEMS (KLASSIKER) */
 .menu-item{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 15px 25px;
-  border-bottom: 1px dashed var(--color-border);
+  padding: 12px 25px;
+  border-bottom: 1px dashed var(--color-bg-subtle);
+  font-size: 0.95rem;
 }
 
 .menu-item:last-child{
@@ -110,56 +122,86 @@ header h1{
 }
 
 .item-name{
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--color-dark);
-}
-
-.item-desc{
-  font-size: 0.9rem;
-  color: var(--color-muted);
-  margin-top: 3px;
+  font-weight: 500;
+  color: var(--color-text);
 }
 
 .item-price{
   white-space: nowrap;
   font-weight: 700;
-  color: var(--color-accent);
-  font-size: 1.2rem;
-  padding-left: 15px; /* Abstand zum Text */
+  color: var(--color-accent-water);
+  padding-left: 15px;
 }
 
-/* SPECIAL FOR WEEKLY MENU */
-.weekly-special{
-    /* Hervorhebung für das Wochengericht */
-    background-color: var(--color-secondary); 
+/* TABELLE FÜR WOCHENKARTE */
+.weekly-table-container {
+    padding: 0 25px;
+}
+
+.weekly-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95rem;
+}
+
+.weekly-table-container thead th {
+    background-color: var(--color-sand);
+    color: var(--color-primary-dark);
+    padding: 10px 10px;
+    text-align: left;
+    font-weight: 700;
+}
+
+.weekly-table-container tbody td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--color-bg-subtle);
+    vertical-align: top;
+}
+.weekly-table-container tbody tr:hover {
+    background-color: rgba(74, 117, 158, 0.05); 
+}
+
+.day-col {
+    width: 25%;
+    font-weight: 500;
+}
+.menu-col {
+    width: 37.5%;
+}
+
+.closed-day {
+    color: #cc0000; /* Rot für geschlossen */
+    font-weight: 700;
+}
+
+.small-info {
+    font-size: 0.85rem;
+    padding: 15px 0 0;
+    color: var(--color-primary-dark);
+    font-style: italic;
+    text-align: center;
 }
 
 /* FOOTER */
 .footer-block{
   text-align: center;
   padding: 20px;
-  color: var(--color-muted);
+  color: var(--color-text);
   font-size: 0.9rem;
 }
 
-.small-text{
-    font-size: 0.8rem;
-    margin-top: -10px;
-}
-
-/* MOBILE OPTIMIERUNG (optional, da Flexbox/Grid meist gut skaliert) */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  .menu-item {
-    padding: 10px 15px;
-  }
-  .item-price {
-    font-size: 1rem;
-  }
-  .section-title {
-    font-size: 1.5rem;
-  }
+@media (max-width: 768px) {
+    .info-block {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .hero-image {
+        height: 200px;
+    }
+    .weekly-table-container table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 }
