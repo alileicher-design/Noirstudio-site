@@ -5,7 +5,214 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bootshaus Neckarsulm – Bistro · Café · Musikpub</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+<style>
+/* --- STYLES BEGINN --- */
+
+:root{
+  --color-dark: #1e1e1e;       /* Dunkle Textfarbe */
+  --color-light: #ffffff;      /* Hintergrundfarbe (Papier) */
+  --color-primary: #3d5a80;    /* Tiefes Blau (Akzent 1, maritim) */
+  --color-secondary: #e0fbfc;  /* Helles Mint (Leichter Akzent) */
+  --color-accent: #9d8c6b;     /* Warmes Sand/Beige (Akzent 2) */
+  --color-muted: #6a6a6a;      /* Gedämpfte Textfarbe */
+  --color-border: #f0f0f0;     /* Helle Trennlinie */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+
+/* HEADER */
+header{
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding: 40px 16px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-content{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header h1{
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.subtitle{
+  margin: 5px 0 15px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.zeiten-info{
+  background-color: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* CONTAINER */
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px 50px;
+}
+
+/* MENU SECTIONS */
+.menu-section{
+  background-color: var(--color-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 35px;
+  padding: 25px 0;
+}
+
+.section-title{
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  padding: 0 25px 15px;
+  border-bottom: 2px solid var(--color-accent);
+  margin: 0 0 15px;
+}
+
+.menu-info{
+  padding: 0 25px 15px;
+  color: var(--color-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+/* MENU ITEMS (FÜR KLASSIKER) */
+.menu-category h3{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  padding: 15px 25px 5px;
+  margin: 0;
+}
+
+.menu-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px 25px;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.menu-item:last-child{
+  border-bottom: none;
+}
+
+.item-name{
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-dark);
+}
+
+.item-desc{
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-top: 3px;
+}
+
+.item-price{
+  white-space: nowrap;
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  padding-left: 15px; /* Abstand zum Text */
+}
+
+/* FOOTER */
+.footer-block{
+  text-align: center;
+  padding: 20px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.small-text{
+    font-size: 0.8rem;
+    margin-top: -10px;
+}
+
+/* TABELLE FÜR WOCHENKARTE */
+.weekly-table-container {
+    padding: 0 25px;
+}
+
+.weekly-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95rem;
+}
+
+.weekly-table-container thead th {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    padding: 10px 10px;
+    text-align: left;
+    font-weight: 700;
+}
+
+.weekly-table-container tbody td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+}
+
+.weekly-table-container tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.weekly-table-container tbody tr:nth-child(odd) {
+    background-color: var(--color-secondary); /* Leichte Streifenoptik */
+}
+
+.day-col {
+    width: 20%;
+    font-weight: 600;
+}
+
+.menu-col {
+    width: 40%;
+}
+
+.small-info {
+    font-size: 0.85rem;
+    padding: 15px 0 0;
+    color: var(--color-primary);
+    font-style: italic;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .weekly-table-container table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+/* --- STYLES ENDE --- */
+</style>
 </head>
 
 <body>
@@ -15,7 +222,7 @@
     <h1>Bootshaus Neckarsulm</h1>
     <p class="subtitle">Bistro · Café · Musikpub</p>
     <div class="zeiten-info">
-      <p>Warme Küche: 11:00 – 14:00 Uhr · 17:00 – 21:00 Uhr</p>
+      <p>Warme Küche von 11–14, 17–21 Uhr</p>
     </div>
   </div>
 </header>
@@ -27,46 +234,94 @@
   </section>
 
   <section class="menu-section">
-    <h2 class="section-title">Unsere Klassiker</h2>
+    <h2 class="section-title">Täglich</h2>
+    <p class="menu-info">Alle Speisen können Sie auch abholen ***</p>
 
     <div class="menu-category">
-      <h3>Suppen</h3>
-      <div class="menu-item">
-        <div class="item-details">
-          <div class="item-name">Maultaschensuppe</div>
-          <div class="item-desc">Hausgemachte Maultaschen in kräftiger Brühe.</div>
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">1. Rostbraten, Spätzle o. Pommes und Salat</div>
+            </div>
+            <div class="item-price">21,00</div>
         </div>
-        <div class="item-price">4,80 €</div>
-      </div>
-      <div class="menu-item">
-        <div class="item-details">
-          <div class="item-name">Karotten-Ingwer-Kartoffelsuppe</div>
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">2. Rumpsteak, Blattsalat o. Pommes und Salat</div>
+            </div>
+            <div class="item-price">21,00</div>
         </div>
-        <div class="item-price">4,80 €</div>
-      </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">3. Putenschnitzel, Spätzle o. Pommes und Salat</div>
+            </div>
+            <div class="item-price">14,50</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">4. Paniertes Schnitzel, Spätzle o. Pommes u. Salat</div>
+            </div>
+            <div class="item-price">12,50</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">5. Rahmschnitzel, Spätzle o. Pommes u. Salat</div>
+            </div>
+            <div class="item-price">13,00</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">6. Maultaschen mit Ei und Kartoffelsalat</div>
+            </div>
+            <div class="item-price">8,90</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">7. Maultaschen geröstet mit Salat</div>
+            </div>
+            <div class="item-price">9,20</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">8. Käsespätzle mit Salatbeilage</div>
+            </div>
+            <div class="item-price">9,50</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">9. Wurstsalat, Käse, Tomate u. Ei, Zwiebel</div>
+            </div>
+            <div class="item-price">9,50</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">10. Großer Salatteller, Käse und Schinken</div>
+            </div>
+            <div class="item-price">9,50</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">11. Kleiner Salatteller</div>
+            </div>
+            <div class="item-price">4,00</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">12. Großer Salatteller mit frittierten Maultaschen</div>
+            </div>
+            <div class="item-price">10,00</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">13. Großer Salatteller mit Putenstreifen</div>
+            </div>
+            <div class="item-price">12,00</div>
+        </div>
     </div>
-    
-    <div class="menu-category">
-      <h3>Klassiker</h3>
-      <div class="menu-item">
-        <div class="item-details">
-          <div class="item-name">Rostbraten mit Beilage & Salat</div>
-        </div>
-        <div class="item-price">21,00 €</div>
-      </div>
-      <div class="menu-item">
-        <div class="item-details">
-          <div class="item-name">Paniertes Schnitzel mit Beilage & Salat</div>
-        </div>
-        <div class="item-price">12,50 €</div>
-      </div>
-    </div>
-    
   </section>
   
   <footer class="footer-block">
-    <p>Alle Preise inkl. MwSt · Speisen auch zum Abholen</p>
-    <p class="small-text">Telefonische Bestellungen bitte bis 11:30 Uhr</p>
+    <p>Wir bitten Sie Ihre telefonische Bestellungen bis 11:30 Uhr zu tätigen !!</p>
+    <p class="small-text">Alle Preise inkl. MwSt</p>
   </footer>
 
 </div>
@@ -85,30 +340,46 @@ async function loadWeeklyMenu() {
         
         let html = `
             <h2 class="section-title">${data.title}</h2>
-            <p class="menu-info">${data.date_info} &middot; Mittagstisch 11:00 – 14:00 Uhr</p>
-            <div class="menu-category">
+            <p class="menu-info">${data.date_info}</p>
+            <div class="weekly-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="day-col">Tages-Essen vom:</th>
+                        <th class="menu-col">MENÜ 1: ${data.daily_menu[0].menu_1_price}</th>
+                        <th class="menu-col">MENÜ 2: ${data.daily_menu[0].menu_2_price}</th>
+                    </tr>
+                </thead>
+                <tbody>
         `;
 
-        data.items.forEach(item => {
+        data.daily_menu.forEach(dayMenu => {
+            // Zeigt "Geschlossen" an, falls im JSON entsprechend markiert
+            const menu1_display = dayMenu.closed && dayMenu.day === 'Dienstag' ? 'Geschlossen' : dayMenu.menu_1_name;
+            const menu2_display = dayMenu.closed && dayMenu.day === 'Freitag' ? 'Geschlossen' : dayMenu.menu_2_name;
+
             html += `
-                <div class="menu-item weekly-special">
-                    <div class="item-details">
-                        <div class="item-name">${item.name}</div>
-                        ${item.description ? `<div class="item-desc">${item.description}</div>` : ''}
-                    </div>
-                    <div class="item-price">${item.price}</div>
-                </div>
+                <tr>
+                    <td class="day-col"><strong>${dayMenu.day}</strong></td>
+                    <td class="menu-col">${menu1_display}</td>
+                    <td class="menu-col">${dayMenu.menu_2_name}</td>
+                </tr>
             `;
         });
 
-        html += '</div>';
+        html += `
+                </tbody>
+            </table>
+            <p class="small-info">Änderungswünsche der Beilage beim Tagesessen – Zuschlag € –,50 !!</p>
+            </div>
+        `;
         container.innerHTML = html;
         
     } catch (error) {
         console.error("Fehler beim Laden der Wochenkarte:", error);
         container.innerHTML = `
             <h2 class="section-title">Wochenkarte nicht verfügbar</h2>
-            <p class="menu-info">Bitte kontaktieren Sie uns bei Fragen zu den aktuellen Angeboten.</p>
+            <p class="menu-info">Fehler beim Laden der aktuellen Speisen. Bitte die wochenkarte.json prüfen.</p>
         `;
     }
 }
