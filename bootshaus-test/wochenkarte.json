@@ -1,0 +1,26 @@
+{
+    "title": "Aktuelle Wochenkarte: Mittagstisch",
+    "date_info": "Gültig vom 01. – 05. Januar 2026",
+    "items": [
+        {
+            "name": "Dienstag: Gebackener Camembert",
+            "description": "Mit Preiselbeeren und Brotkorb",
+            "price": "10,90 €"
+        },
+        {
+            "name": "Mittwoch: Gefüllte Paprika",
+            "description": "Serviert mit Reis und Tomatensoße",
+            "price": "13,50 €"
+        },
+        {
+            "name": "Donnerstag: Gulasch",
+            "description": "Hausgemacht, mit Spätzle und einem frischen Salat",
+            "price": "14,80 €"
+        },
+        {
+            "name": "Freitag: Fisch des Tages",
+            "description": "Fragen Sie unser Servicepersonal nach der aktuellen Empfehlung",
+            "price": "Tagespreis"
+        }
+    ]
+}
