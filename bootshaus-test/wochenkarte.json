@@ -1,26 +1,46 @@
 {
-    "title": "Aktuelle Wochenkarte: Mittagstisch",
-    "date_info": "Gültig vom 01. – 05. Januar 2026",
-    "items": [
+    "title": "Mittagstisch",
+    "date_info": "Dienstag – Donnerstag · 11:00 – 14:00 Uhr | Gültig vom 08.12.2025 – 12.12.2025",
+    "daily_menu": [
         {
-            "name": "Dienstag: Gebackener Camembert",
-            "description": "Mit Preiselbeeren und Brotkorb",
-            "price": "10,90 €"
+            "day": "Montag",
+            "menu_1_name": "Rahmschnitzel mit Spätzle",
+            "menu_1_price": "9,00 €",
+            "menu_2_name": "Tortellini mit Schinkensahnesoße",
+            "menu_2_price": "8,00 €",
+            "closed": false
         },
         {
-            "name": "Mittwoch: Gefüllte Paprika",
-            "description": "Serviert mit Reis und Tomatensoße",
-            "price": "13,50 €"
+            "day": "Dienstag",
+            "menu_1_name": "Mittags",
+            "menu_1_price": "9,00 €",
+            "menu_2_name": "Geschlossen",
+            "menu_2_price": "8,00 €",
+            "closed": true
         },
         {
-            "name": "Donnerstag: Gulasch",
-            "description": "Hausgemacht, mit Spätzle und einem frischen Salat",
-            "price": "14,80 €"
+            "day": "Mittwoch",
+            "menu_1_name": "Sahnegeschnetzeltes mit Nudeln",
+            "menu_1_price": "9,00 €",
+            "menu_2_name": "Wurstsalat mit Bratkartoffeln",
+            "menu_2_price": "8,00 €",
+            "closed": false
         },
         {
-            "name": "Freitag: Fisch des Tages",
-            "description": "Fragen Sie unser Servicepersonal nach der aktuellen Empfehlung",
-            "price": "Tagespreis"
+            "day": "Donnerstag",
+            "menu_1_name": "Putenschnitzel mit Püree u Erbsengemüse",
+            "menu_1_price": "9,00 €",
+            "menu_2_name": "Hamburger mit Pommes",
+            "menu_2_price": "8,00 €",
+            "closed": false
+        },
+        {
+            "day": "Freitag",
+            "menu_1_name": "Mittag",
+            "menu_1_price": "9,00 €",
+            "menu_2_name": "Geschlossen",
+            "menu_2_price": "8,00 €",
+            "closed": true
         }
     ]
 }
