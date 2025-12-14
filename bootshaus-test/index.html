@@ -3,20 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bootshaus Neckarsulm – Bistro · Café · Musikpub</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Bootshaus Neckarsulm – Digitaler Speiseplan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
 /* --- STYLES BEGINN --- */
 
 :root{
-  --color-dark: #1e1e1e;       /* Dunkle Textfarbe */
-  --color-light: #ffffff;      /* Hintergrundfarbe (Papier) */
-  --color-primary: #3d5a80;    /* Tiefes Blau (Akzent 1, maritim) */
-  --color-secondary: #e0fbfc;  /* Helles Mint (Leichter Akzent) */
-  --color-accent: #9d8c6b;     /* Warmes Sand/Beige (Akzent 2) */
-  --color-muted: #6a6a6a;      /* Gedämpfte Textfarbe */
-  --color-border: #f0f0f0;     /* Helle Trennlinie */
+  --color-primary-dark: #1f3f5a;     /* Tiefes Marineblau/Dunkel (Header, Titel) */
+  --color-accent-water: #4a759e;     /* Mittleres Blau (Akzent für Info) */
+  --color-sand: #c7b69a;             /* Sandfarben/Beige (Akzent für Linien/Hervorhebung) */
+  --color-light: #ffffff;            /* Hintergrund Weiß */
+  --color-bg-subtle: #f7f7f7;        /* Dezenter Hintergrund für Blöcke */
+  --color-text: #333333;
 }
 
 *, *::before, *::after {
@@ -25,19 +24,29 @@
 
 body{
   margin:0;
-  font-family: 'Inter', Arial, sans-serif;
-  background-color: var(--color-secondary);
-  color: var(--color-dark);
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text);
   line-height: 1.6;
+}
+
+/* HERO SECTION (Seeblick) */
+.hero-image{
+    /* Platzhalter für das gewünschte Bootshaus-Bild */
+    background-image: url('https://via.placeholder.com/1200x400/87CEFA/FFFFFF?text=Bootshaus+Neckarsulm+mit+Seeblick');
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* HEADER */
 header{
-  background-color: var(--color-primary);
-  color: var(--color-light);
-  padding: 40px 16px;
+  background-color: var(--color-light);
+  padding: 20px 16px;
   text-align: center;
-  margin-bottom: 20px;
+  border-bottom: 5px solid var(--color-sand);
 }
 
 .header-content{
@@ -46,74 +55,77 @@ header{
 }
 
 header h1{
-  margin: 0;
-  font-size: 2.8rem;
-  font-weight: 700;
-  letter-spacing: -1px;
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 5px;
+  font-size: 2.5rem;
+  color: var(--color-primary-dark);
 }
 
 .subtitle{
-  margin: 5px 0 15px;
-  font-size: 1.2rem;
-  font-weight: 400;
-  opacity: 0.9;
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--color-text);
 }
 
-.zeiten-info{
-  background-color: rgba(255, 255, 255, 0.1);
-  display: inline-block;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
+.info-block{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 0.95rem;
+    color: var(--color-accent-water);
+    margin-top: 10px;
+}
+.info-block strong{
+    color: var(--color-primary-dark);
+    font-weight: 500;
 }
 
 /* CONTAINER */
 .container{
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 16px 50px;
+  padding: 30px 16px 50px;
 }
 
 /* MENU SECTIONS */
 .menu-section{
   background-color: var(--color-light);
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin-bottom: 35px;
   padding: 25px 0;
 }
 
 .section-title{
-  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
   padding: 0 25px 15px;
-  border-bottom: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-sand);
   margin: 0 0 15px;
 }
 
 .menu-info{
   padding: 0 25px 15px;
-  color: var(--color-muted);
-  font-style: italic;
+  color: var(--color-text);
+  font-size: 1rem;
   margin: 0;
+}
+.menu-info strong {
+    color: var(--color-accent-water); /* Wochenkarte Datum fett in Akzentfarbe */
+    font-weight: 700;
 }
 
 /* MENU ITEMS (FÜR KLASSIKER) */
-.menu-category h3{
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--color-dark);
-  padding: 15px 25px 5px;
-  margin: 0;
-}
-
 .menu-item{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 15px 25px;
-  border-bottom: 1px dashed var(--color-border);
+  padding: 12px 25px;
+  border-bottom: 1px dashed var(--color-bg-subtle);
+  font-size: 0.95rem;
 }
 
 .menu-item:last-child{
@@ -121,36 +133,15 @@ header h1{
 }
 
 .item-name{
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--color-dark);
-}
-
-.item-desc{
-  font-size: 0.9rem;
-  color: var(--color-muted);
-  margin-top: 3px;
+  font-weight: 500;
+  color: var(--color-text);
 }
 
 .item-price{
   white-space: nowrap;
   font-weight: 700;
-  color: var(--color-accent);
-  font-size: 1.2rem;
-  padding-left: 15px; /* Abstand zum Text */
-}
-
-/* FOOTER */
-.footer-block{
-  text-align: center;
-  padding: 20px;
-  color: var(--color-muted);
-  font-size: 0.9rem;
-}
-
-.small-text{
-    font-size: 0.8rem;
-    margin-top: -10px;
+  color: var(--color-accent-water);
+  padding-left: 15px;
 }
 
 /* TABELLE FÜR WOCHENKARTE */
@@ -166,8 +157,8 @@ header h1{
 }
 
 .weekly-table-container thead th {
-    background-color: var(--color-accent);
-    color: var(--color-light);
+    background-color: var(--color-sand);
+    color: var(--color-primary-dark);
     padding: 10px 10px;
     text-align: left;
     font-weight: 700;
@@ -175,36 +166,50 @@ header h1{
 
 .weekly-table-container tbody td {
     padding: 12px 10px;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-bg-subtle);
     vertical-align: top;
 }
-
-.weekly-table-container tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.weekly-table-container tbody tr:nth-child(odd) {
-    background-color: var(--color-secondary); /* Leichte Streifenoptik */
+.weekly-table-container tbody tr:hover {
+    background-color: rgba(74, 117, 158, 0.05); /* Leichter Hover-Effekt */
 }
 
 .day-col {
-    width: 20%;
-    font-weight: 600;
+    width: 25%;
+    font-weight: 500;
+}
+.menu-col {
+    width: 37.5%;
 }
 
-.menu-col {
-    width: 40%;
+.closed-day {
+    color: #cc0000; /* Rot für geschlossen */
+    font-weight: 700;
 }
 
 .small-info {
     font-size: 0.85rem;
     padding: 15px 0 0;
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     font-style: italic;
     text-align: center;
 }
 
-@media (max-width: 600px) {
+/* FOOTER */
+.footer-block{
+  text-align: center;
+  padding: 20px;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .info-block {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .hero-image {
+        height: 200px;
+    }
     .weekly-table-container table {
         display: block;
         overflow-x: auto;
@@ -217,12 +222,16 @@ header h1{
 
 <body>
 
+<div class="hero-image" role="img" aria-label="Idyllischer Blick auf das Bootshaus am See mit bunten Häusern und Booten"></div>
+
 <header>
   <div class="header-content">
     <h1>Bootshaus Neckarsulm</h1>
     <p class="subtitle">Bistro · Café · Musikpub</p>
-    <div class="zeiten-info">
-      <p>Warme Küche von 11–14, 17–21 Uhr</p>
+    
+    <div class="info-block">
+        <span>Warme Küche: <strong>11:00 – 14:00 Uhr</strong> und <strong>17:00 – 21:00 Uhr</strong></span>
+        <span>Telefon: <strong>0 71 32 / 73 42</strong></span>
     </div>
   </div>
 </header>
@@ -235,93 +244,28 @@ header h1{
 
   <section class="menu-section">
     <h2 class="section-title">Täglich</h2>
-    <p class="menu-info">Alle Speisen können Sie auch abholen ***</p>
+    <p class="menu-info">Unsere Klassiker können Sie selbstverständlich auch abholen ***</p>
 
     <div class="menu-category">
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">1. Rostbraten, Spätzle o. Pommes und Salat</div>
-            </div>
-            <div class="item-price">21,00</div>
-        </div>
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">2. Rumpsteak, Blattsalat o. Pommes und Salat</div>
-            </div>
-            <div class="item-price">21,00</div>
-        </div>
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">3. Putenschnitzel, Spätzle o. Pommes und Salat</div>
-            </div>
-            <div class="item-price">14,50</div>
-        </div>
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">4. Paniertes Schnitzel, Spätzle o. Pommes u. Salat</div>
-            </div>
-            <div class="item-price">12,50</div>
-        </div>
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">5. Rahmschnitzel, Spätzle o. Pommes u. Salat</div>
-            </div>
-            <div class="item-price">13,00</div>
-        </div>
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">6. Maultaschen mit Ei und Kartoffelsalat</div>
-            </div>
-            <div class="item-price">8,90</div>
-        </div>
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">7. Maultaschen geröstet mit Salat</div>
-            </div>
-            <div class="item-price">9,20</div>
-        </div>
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">8. Käsespätzle mit Salatbeilage</div>
-            </div>
-            <div class="item-price">9,50</div>
-        </div>
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">9. Wurstsalat, Käse, Tomate u. Ei, Zwiebel</div>
-            </div>
-            <div class="item-price">9,50</div>
-        </div>
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">10. Großer Salatteller, Käse und Schinken</div>
-            </div>
-            <div class="item-price">9,50</div>
-        </div>
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">11. Kleiner Salatteller</div>
-            </div>
-            <div class="item-price">4,00</div>
-        </div>
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">12. Großer Salatteller mit frittierten Maultaschen</div>
-            </div>
-            <div class="item-price">10,00</div>
-        </div>
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">13. Großer Salatteller mit Putenstreifen</div>
-            </div>
-            <div class="item-price">12,00</div>
-        </div>
+        <div class="menu-item"><div class="item-details"><div class="item-name">1. Rostbraten, Spätzle o. Pommes und Salat</div></div><div class="item-price">21,00</div></div>
+        <div class="menu-item"><div class="item-details"><div class="item-name">2. Rumpsteak, Blattsalat o. Pommes und Salat</div></div><div class="item-price">21,00</div></div>
+        <div class="menu-item"><div class="item-details"><div class="item-name">3. Putenschnitzel, Spätzle o. Pommes und Salat</div></div><div class="item-price">14,50</div></div>
+        <div class="menu-item"><div class="item-details"><div class="item-name">4. Paniertes Schnitzel, Spätzle o. Pommes u. Salat</div></div><div class="item-price">12,50</div></div>
+        <div class="menu-item"><div class="item-details"><div class="item-name">5. Rahmschnitzel, Spätzle o. Pommes u. Salat</div></div><div class="item-price">13,00</div></div>
+        <div class="menu-item"><div class="item-details"><div class="item-name">6. Maultaschen mit Ei und Kartoffelsalat</div></div><div class="item-price">8,90</div></div>
+        <div class="menu-item"><div class="item-details"><div class="item-name">7. Maultaschen geröstet mit Salat</div></div><div class="item-price">9,20</div></div>
+        <div class="menu-item"><div class="item-details"><div class="item-name">8. Käsespätzle mit Salatbeilage</div></div><div class="item-price">9,50</div></div>
+        <div class="menu-item"><div class="item-details"><div class="item-name">9. Wurstsalat, Käse, Tomate u. Ei, Zwiebel</div></div><div class="item-price">9,50</div></div>
+        <div class="menu-item"><div class="item-details"><div class="item-name">10. Großer Salatteller, Käse und Schinken</div></div><div class="item-price">9,50</div></div>
+        <div class="menu-item"><div class="item-details"><div class="item-name">11. Kleiner Salatteller</div></div><div class="item-price">4,00</div></div>
+        <div class="menu-item"><div class="item-details"><div class="item-name">12. Großer Salatteller mit frittierten Maultaschen</div></div><div class="item-price">10,00</div></div>
+        <div class="menu-item"><div class="item-details"><div class="item-name">13. Großer Salatteller mit Putenstreifen</div></div><div class="item-price">12,00</div></div>
     </div>
   </section>
   
   <footer class="footer-block">
     <p>Wir bitten Sie Ihre telefonische Bestellungen bis 11:30 Uhr zu tätigen !!</p>
-    <p class="small-text">Alle Preise inkl. MwSt</p>
+    <p>Alle Preise inkl. MwSt</p>
   </footer>
 
 </div>
@@ -334,13 +278,15 @@ async function loadWeeklyMenu() {
         // Läd die wochenkarte.json Datei
         const response = await fetch('wochenkarte.json');
         if (!response.ok) {
+            // Zeigt Fehler an, wenn die Datei nicht gefunden wird
             throw new Error(`HTTP-Fehler: ${response.status}`);
         }
         const data = await response.json();
         
+        // 4. und 5. Erstellung des HTMLs mit korrekter Formatierung und Logik
         let html = `
             <h2 class="section-title">${data.title}</h2>
-            <p class="menu-info">${data.date_info}</p>
+            <p class="menu-info">Mittagstisch Dienstag – Donnerstag · 11:00 – 14:00 Uhr | Gültig vom: <strong>${data.date_info}</strong></p>
             <div class="weekly-table-container">
             <table>
                 <thead>
@@ -354,15 +300,20 @@ async function loadWeeklyMenu() {
         `;
 
         data.daily_menu.forEach(dayMenu => {
-            // Zeigt "Geschlossen" an, falls im JSON entsprechend markiert
-            const menu1_display = dayMenu.closed && dayMenu.day === 'Dienstag' ? 'Geschlossen' : dayMenu.menu_1_name;
-            const menu2_display = dayMenu.closed && dayMenu.day === 'Freitag' ? 'Geschlossen' : dayMenu.menu_2_name;
+            let menu1_content = dayMenu.menu_1_name;
+            let menu2_content = dayMenu.menu_2_name;
+            
+            // Logik für Mittagspause am Montag und Freitag
+            if (dayMenu.day === 'Montag' || dayMenu.day === 'Freitag') {
+                menu1_content = '<span class="closed-day">Mittags geschlossen</span>';
+                menu2_content = '<span class="closed-day">Geschlossen</span>';
+            }
 
             html += `
                 <tr>
                     <td class="day-col"><strong>${dayMenu.day}</strong></td>
-                    <td class="menu-col">${menu1_display}</td>
-                    <td class="menu-col">${dayMenu.menu_2_name}</td>
+                    <td class="menu-col">${menu1_content}</td>
+                    <td class="menu-col">${menu2_content}</td>
                 </tr>
             `;
         });
@@ -379,7 +330,7 @@ async function loadWeeklyMenu() {
         console.error("Fehler beim Laden der Wochenkarte:", error);
         container.innerHTML = `
             <h2 class="section-title">Wochenkarte nicht verfügbar</h2>
-            <p class="menu-info">Fehler beim Laden der aktuellen Speisen. Bitte die wochenkarte.json prüfen.</p>
+            <p class="menu-info">Die Wochenkarte konnte nicht geladen werden. Bitte die wochenkarte.json prüfen.</p>
         `;
     }
 }
